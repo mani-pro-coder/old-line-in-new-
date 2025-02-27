@@ -1,0 +1,4 @@
+name = "old line in new"
+type = "javascript"
+main = "index.js"
+
