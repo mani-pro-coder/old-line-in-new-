@@ -1,0 +1,169 @@
+/* Reset CSS با استفاده از روش هدفمندتر */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* متغیرهای CSS برای رنگ‌ها و مقادیر تکراری */
+:root {
+    --primary-color: #fff;
+    --secondary-color: #e0e0e0;
+    --accent-color: #ffcc00;
+    --background-gradient-start: #6a11cb;
+    --background-gradient-end: #2575fc;
+}
+
+/* استایل‌های کلی صفحه */
+body {
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+    font-family: 'Vazir', sans-serif;
+    color: var(--primary-color);
+    line-height: 1.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* عنوان اصلی */
+h1 {
+    font-size: 2.8em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* پاراگراف‌ها */
+p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    text-align: justify;
+    color: var(--secondary-color);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* بخش اطلاعات تماس */
+.contact-info {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-top: 40px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    display: inline-block;
+    animation: fadeIn 2.5s ease-in-out;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* تصویر */
+img {
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 2s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* طراحی واکنش‌گرا (Responsive) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .contact-info {
+        font-size: 1em;
+        padding: 10px;
+    }
+}

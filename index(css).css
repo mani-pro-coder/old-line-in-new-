@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: 'Vazir', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.panel {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    contain: content;
+}
+
+.panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel li {
+    margin: 20px 0;
+}
+
+.panel a {
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-property: letter-spacing, color, transform;
+    will-change: letter-spacing, color, transform;
+    outline: none;
+}
+
+.panel a:focus {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.panel a:hover {
+    letter-spacing: 0.1em;
+    color: #ddd;
+    transform: scale(1.05);
+}
+
+.panel a:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-property: width, filter;
+    will-change: width, filter;
+}
+
+.panel a:hover:before {
+    width: 100%;
+}
+
+.panel a[data-text]:before {
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    width: 0%;
+    transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-property: width, filter;
+    will-change: width, filter;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.panel a:hover:before {
+    width: 100%;
+    filter: blur(2px);
+}
+/* فایل index(css).css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
